@@ -33,7 +33,7 @@ How to run:
 
 ####Outline of optimisation methods:
 
-1. Prevented forced synchronous layout by reading style first and then batch style changes. This method was used in the resizePizzas function
+1. Prevented forced synchronous layout by reading style first and then batch style changes. This method was used in several places including the resizePizzas function
 2. Reduced the number of .mover elements from 200 to 32 
 3. Used requestAnimationFrame for all animation changes on screen
 4. Debounced input handler for scroll in "window.addEventListener('scroll', onScroll);" and stored the scrollY value to be read only once during requestAnimationFrame

@@ -528,8 +528,7 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 
 // Moves the sliding background pizzas based on scroll position
 
-var moversLeftArray = [];
-
+var moversLeftArray = []; //stores the initial basicLeft value for all of the mover elements
 
 function updatePositions() {
 
@@ -560,7 +559,7 @@ function updatePositions() {
      // console.log("new width: " + newWidth);
      
      items[i].style.left = newWidth + 'px';
-     // moversLeftArray.splice(i, 1, newWidth);
+     // moversLeftArray.splice(i, 1, newWidth); //weird that this doesn't work although not needed 
   }
 
 
@@ -582,15 +581,12 @@ function updatePositions() {
   }
 }
 
-// runs updatePositions on scroll
-// window.addEventListener('scroll', updatePositions);
-
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   
-  for (var i = 0; i < 32; i++) {
+  for (var i = 0; i < 32; i++) { //reduced the number of elements from 200
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
@@ -609,7 +605,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-var lastScrollY;
+var lastScrollY; //store the scrollY position 
 
 function onScroll (evt) { 
   // Store the scroll value for laterz. 

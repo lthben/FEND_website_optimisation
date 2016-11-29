@@ -21,9 +21,9 @@ How the build tools were used:
 
 ####Outline of optimisation methods:
 
-1. Used the "async" attribute for the google <script> tag.
+1. Used the "async" attribute for the google script tag.
 2. Used npm build tools for minification and inlining css.
-3. Made images responsive by using the "srcset" attribute in the <img> tag.
+3. Made images responsive by using the "srcset" attribute in the img tag.
 
 ###Part 2: Optimize Frames per Second in pizza.html
 

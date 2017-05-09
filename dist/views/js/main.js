@@ -406,13 +406,13 @@ var resizePizzas = function(size) {
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
-        document.querySelector("#pizzaSize").innerHTML = "Small";
+        document.getElementById("pizzaSize").innerHTML = "Small";
         return;
       case "2":
-        document.querySelector("#pizzaSize").innerHTML = "Medium";
+        document.getElementById("pizzaSize").innerHTML = "Medium";
         return;
       case "3":
-        document.querySelector("#pizzaSize").innerHTML = "Large";
+        document.getElementById("pizzaSize").innerHTML = "Large";
         return;
       default:
         console.log("bug in changeSliderLabel");
@@ -474,7 +474,7 @@ var resizePizzas = function(size) {
 
     var numPizzaContainers = document.getElementsByClassName("randomPizzaContainer");
 
-    for (var i=0; i<numPizzaContainers.length; i++) {
+    for (var i=0, len = numPizzaContainers.length; i < len; i++) {
         numPizzaContainers[i].style.width = newSize + "%";
     } 
     /*
@@ -548,7 +548,7 @@ function updatePositions() {
   }
   */
 
-  items = document.querySelectorAll('.mover');
+  items = document.getElementsByClassName('mover');
 
   for (var i = 0; i < items.length; i++) {
     // var phase = Math.sin((topOffset / 1250) + (i % 5));
@@ -590,6 +590,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var rows = 4;
   var numElem = cols * rows;
   var elem;
+
+  var movingPizzas = document.getElementById('movingPizzas1');
   
   for (var i = 0; i < numElem; i++) { //reduced the number of elements from 200
     elem = document.createElement('img');
@@ -602,7 +604,7 @@ document.addEventListener('DOMContentLoaded', function() {
     moversLeftArray.push(elem.basicLeft);
 
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    movingPizzas.appendChild(elem);
   }
 
   updatePositions();
